@@ -86,6 +86,7 @@
                                         value="{{ old('name') }}">
                                 </div>
 
+<<<<<<< HEAD
                                 <button type="submit" class="btn btn-success mb-3">Tambah Kategori Buku</button>
                             </div>
                         </form>
@@ -149,6 +150,11 @@
                         </div>
 
 
+=======
+                                <button type="submit" class="btn btn-success">Tambah Kategori Buku</button>
+                            </div>
+                        </form>
+>>>>>>> 20f0b5a (DotIntership DONE)
                     </div>
                 @endif
             </div>

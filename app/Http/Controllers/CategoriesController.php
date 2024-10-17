@@ -48,7 +48,11 @@ class CategoriesController extends Controller
         ]);
 
         // Redirect dengan pesan sukses
+<<<<<<< HEAD
         return redirect()->route('createBook')->with('success', 'Kategori berhasil ditambahkan!');
+=======
+        return redirect()->route('home')->with('success', 'Kategori berhasil ditambahkan!');
+>>>>>>> 20f0b5a (DotIntership DONE)
     }
 
     /**
@@ -93,9 +97,13 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
+<<<<<<< HEAD
         $category = Categories::findOrFail($id);
         $category->delete();
 
         return redirect()->route('createBook')->with('success', 'Kategori Buku Telah Dihapus.');
+=======
+        //
+>>>>>>> 20f0b5a (DotIntership DONE)
     }
 }

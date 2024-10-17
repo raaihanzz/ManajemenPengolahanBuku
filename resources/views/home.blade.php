@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<<<<<<< HEAD
     <div class="container mt-5">
+=======
+    <div class="container">
+>>>>>>> 20f0b5a (DotIntership DONE)
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="d-flex justify-content-between mb-5">
@@ -9,6 +13,11 @@
                         @if (Auth::user()->role == 'admin')
                             <a class="btn btn-success" href="{{ url('/createBook') }}" role="button">Tambah Data Buku dan
                                 Kategori</a>
+<<<<<<< HEAD
+=======
+                        @elseif(Auth::user()->role == 'user')
+                            <a class="btn btn-primary" href="{{ url('/createBook') }}" role="button">Tambah Data Buku</a>
+>>>>>>> 20f0b5a (DotIntership DONE)
                         @endif
                     </div>
                     <div>

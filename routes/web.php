@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoriesController;
+<<<<<<< HEAD
 use App\Models\Categories;
+=======
+>>>>>>> 20f0b5a (DotIntership DONE)
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,6 +38,9 @@ Route::get('/searchBooks', [BookController::class, 'searchBooks'])->name('search
 
 Route::get('/createCategories', [CategoriesController::class, 'create'])->name('createCategories');
 Route::post('/storeCategories', [CategoriesController::class, 'storeCategories'])->name('storeCategories');
+<<<<<<< HEAD
 Route::get('/deleteCategory/{id}', [CategoriesController::class, 'destroy'])->name('deleteCategory');
+=======
+>>>>>>> 20f0b5a (DotIntership DONE)
 
 // Route::get('/', [BookController::class, 'index']);
