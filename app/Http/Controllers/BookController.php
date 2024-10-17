@@ -130,7 +130,14 @@ class BookController extends Controller
     {
         $query = $request->input('query');
         // Pencarian berdasarkan judul buku
-        $books = Book::where('title', 'LIKE', '%' . $query . '%')->get();
+        $books = Book::where('title', 'LIKE', '%' . $query . '%')
+            ->orWhere('author', 'LIKE', '%' . $query . '%')
+            ->orWhere('published_at', 'LIKE', '%' . $query . '%')
+            ->orWhereHas('category', function ($q) use ($query) {
+                $q->where('name', 'LIKE', '%' . $query . '%');
+            })
+            ->with('category') // Eager load category to prevent multiple queries
+            ->get();
 
         // Ambil role pengguna
         $userRole = Auth::user()->role;
