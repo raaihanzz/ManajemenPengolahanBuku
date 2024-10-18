@@ -23,7 +23,7 @@ Saya membuat sistem program sederhana yang saya rancang untuk mengelola data kat
 2. **categories**: Tabel yang memiliki relasi one-to-many dengan tabel _books_.
    - Kolom: `id`, `name`.
   
-![Uploading Tabel Diagram Manajemen Kategori Buku.jpg…]()
+![Tabel Diagram Manajemen Kategori Buku](https://github.com/user-attachments/assets/55cfda3f-5386-4660-bcea-5dd22c4e7599)
 
 **Relasi**: Satu entitas dari **_Table Categories_** dapat memiliki banyak entitas di **_Table Books_** (one-to-many).
 
