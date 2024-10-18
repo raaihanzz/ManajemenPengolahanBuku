@@ -48,7 +48,7 @@ class CategoriesController extends Controller
         ]);
 
         // Redirect dengan pesan sukses
-        return redirect()->route('home')->with('success', 'Kategori berhasil ditambahkan!');
+        return redirect()->route('createBook')->with('success', 'Kategori berhasil ditambahkan!');
     }
 
     /**
@@ -93,6 +93,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Categories::findOrFail($id);
+        $category->delete();
+
+        return redirect()->route('createBook')->with('success', 'Kategori Buku Telah Dihapus.');
     }
 }
