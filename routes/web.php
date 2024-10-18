@@ -3,9 +3,13 @@
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoriesController;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Models\Categories;
 =======
 >>>>>>> 20f0b5a (DotIntership DONE)
+=======
+use App\Models\Categories;
+>>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,8 +43,12 @@ Route::get('/searchBooks', [BookController::class, 'searchBooks'])->name('search
 Route::get('/createCategories', [CategoriesController::class, 'create'])->name('createCategories');
 Route::post('/storeCategories', [CategoriesController::class, 'storeCategories'])->name('storeCategories');
 <<<<<<< HEAD
+<<<<<<< HEAD
 Route::get('/deleteCategory/{id}', [CategoriesController::class, 'destroy'])->name('deleteCategory');
 =======
 >>>>>>> 20f0b5a (DotIntership DONE)
+=======
+Route::get('/deleteCategory/{id}', [CategoriesController::class, 'destroy'])->name('deleteCategory');
+>>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
 
 // Route::get('/', [BookController::class, 'index']);

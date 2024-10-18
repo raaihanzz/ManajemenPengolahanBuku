@@ -2,10 +2,14 @@
 
 @section('content')
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div class="container mt-5">
 =======
     <div class="container">
 >>>>>>> 20f0b5a (DotIntership DONE)
+=======
+    <div class="container mt-5">
+>>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="d-flex justify-content-between mb-5">

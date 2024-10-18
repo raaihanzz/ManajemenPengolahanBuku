@@ -49,10 +49,14 @@ class CategoriesController extends Controller
 
         // Redirect dengan pesan sukses
 <<<<<<< HEAD
+<<<<<<< HEAD
         return redirect()->route('createBook')->with('success', 'Kategori berhasil ditambahkan!');
 =======
         return redirect()->route('home')->with('success', 'Kategori berhasil ditambahkan!');
 >>>>>>> 20f0b5a (DotIntership DONE)
+=======
+        return redirect()->route('createBook')->with('success', 'Kategori berhasil ditambahkan!');
+>>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
     }
 
     /**
@@ -98,12 +102,18 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
         $category = Categories::findOrFail($id);
         $category->delete();
 
         return redirect()->route('createBook')->with('success', 'Kategori Buku Telah Dihapus.');
+<<<<<<< HEAD
 =======
         //
 >>>>>>> 20f0b5a (DotIntership DONE)
+=======
+>>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
     }
 }

@@ -29,10 +29,14 @@
 <body>
     <div id="app">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
 =======
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
 >>>>>>> 20f0b5a (DotIntership DONE)
+=======
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
+>>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
