@@ -9,8 +9,6 @@
                         @if (Auth::user()->role == 'admin')
                             <a class="btn btn-success" href="{{ url('/createBook') }}" role="button">Tambah Data Buku dan
                                 Kategori</a>
-                        @elseif(Auth::user()->role == 'user')
-                            <a class="btn btn-primary" href="{{ url('/createBook') }}" role="button">Tambah Data Buku</a>
                         @endif
                     </div>
                     <div>
