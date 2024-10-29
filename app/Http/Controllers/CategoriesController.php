@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categories;
-use App\Models\Book;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -15,7 +14,7 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        // Implement logic if needed
     }
 
     /**
@@ -37,26 +36,18 @@ class CategoriesController extends Controller
      */
     public function storeCategories(Request $request)
     {
-        // Validasi input
+        // Validate input
         $request->validate([
             'name' => 'required|string|max:255',
         ]);
 
-        // Simpan data kategori
+        // Save category data
         Categories::create([
             'name' => $request->name,
         ]);
 
-        // Redirect dengan pesan sukses
-<<<<<<< HEAD
-<<<<<<< HEAD
+        // Redirect with success message
         return redirect()->route('createBook')->with('success', 'Kategori berhasil ditambahkan!');
-=======
-        return redirect()->route('home')->with('success', 'Kategori berhasil ditambahkan!');
->>>>>>> 20f0b5a (DotIntership DONE)
-=======
-        return redirect()->route('createBook')->with('success', 'Kategori berhasil ditambahkan!');
->>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
     }
 
     /**
@@ -67,7 +58,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        // Implement logic if needed
     }
 
     /**
@@ -78,7 +69,7 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Implement logic if needed
     }
 
     /**
@@ -90,7 +81,7 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Implement logic if needed
     }
 
     /**
@@ -101,19 +92,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
         $category = Categories::findOrFail($id);
         $category->delete();
 
         return redirect()->route('createBook')->with('success', 'Kategori Buku Telah Dihapus.');
-<<<<<<< HEAD
-=======
-        //
->>>>>>> 20f0b5a (DotIntership DONE)
-=======
->>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
     }
 }

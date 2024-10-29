@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Link Favicon -->
+    <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon.ico?v=2') }}">
 
     <!-- CSRF Token -->
@@ -28,15 +28,7 @@
 
 <body>
     <div id="app">
-<<<<<<< HEAD
-<<<<<<< HEAD
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
-=======
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
->>>>>>> 20f0b5a (DotIntership DONE)
-=======
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
->>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -50,7 +42,6 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -77,8 +68,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
+                                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -93,7 +83,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4 pt-5">
             @yield('content')
         </main>
     </div>

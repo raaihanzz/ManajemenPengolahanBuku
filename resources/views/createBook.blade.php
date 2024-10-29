@@ -20,8 +20,8 @@
 
                     <!-- Form Tambah Buku -->
                     <form action="{{ url('/storeBook') }}" method="POST">
+                        @csrf
                         <div class="form-group">
-                            @csrf
                             <div class="mb-3">
                                 <label for="judul">Judul:</label>
                                 <input type="text" name="title" id="title"
@@ -75,19 +75,15 @@
                             </div>
                         @endif
 
-
                         <!-- Form Kategori -->
                         <form action="{{ url('/storeCategories') }}" method="POST">
+                            @csrf
                             <div class="form-group">
-                                @csrf
                                 <div class="mb-3">
                                     <label for="judul">Masukkan Kategori Buku:</label>
                                     <input type="text" name="name" id="name" class="form-control"
                                         value="{{ old('name') }}">
                                 </div>
-
-<<<<<<< HEAD
-<<<<<<< HEAD
                                 <button type="submit" class="btn btn-success mb-3">Tambah Kategori Buku</button>
                             </div>
                         </form>
@@ -149,78 +145,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-=======
-                                <button type="submit" class="btn btn-success">Tambah Kategori Buku</button>
-                            </div>
-                        </form>
->>>>>>> 20f0b5a (DotIntership DONE)
-=======
-                                <button type="submit" class="btn btn-success mb-3">Tambah Kategori Buku</button>
-                            </div>
-                        </form>
-
-                        <div class="container mt-4">
-                            <div class="table-responsive">
-                                <table class="table table-bordered text-center">
-                                    <thead class="thead-dark">
-                                        <tr class="text-center">
-                                            <th scope="col">Daftar Kategori Buku</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                </table>
-
-                                <div style="max-height: 200px; overflow-y: auto;">
-                                    <table class="table table-bordered text-center">
-                                        <tbody>
-                                            @foreach ($categories as $category)
-                                                <tr>
-                                                    <td>{{ $category->name }}</td>
-                                                    <td>
-                                                        <a href="#" class="btn btn-danger me-2" data-bs-toggle="modal"
-                                                            data-bs-target="#deleteModal{{ $category->id }}">Hapus</a>
-
-                                                        <!-- Modal untuk konfirmasi hapus -->
-                                                        <div class="modal fade" id="deleteModal{{ $category->id }}"
-                                                            tabindex="-1"
-                                                            aria-labelledby="deleteModalLabel{{ $category->id }}"
-                                                            aria-hidden="true">
-                                                            <div class="modal-dialog">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h5 class="modal-title"
-                                                                            id="deleteModalLabel{{ $category->id }}">
-                                                                            Konfirmasi Penghapusan</h5>
-                                                                        <button type="button" class="btn-close"
-                                                                            data-bs-dismiss="modal"
-                                                                            aria-label="Close"></button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        Apakah Anda yakin ingin menghapus kategori
-                                                                        <strong>{{ $category->name }}</strong>?
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary"
-                                                                            data-bs-dismiss="modal">Batal</button>
-                                                                        <a href="{{ url('/deleteCategory/' . $category->id) }}"
-                                                                            class="btn btn-danger">Hapus</a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-
-
->>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
                     </div>
                 @endif
             </div>

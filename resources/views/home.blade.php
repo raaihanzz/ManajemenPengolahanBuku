@@ -1,15 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<<<<<<< HEAD
-<<<<<<< HEAD
     <div class="container mt-5">
-=======
-    <div class="container">
->>>>>>> 20f0b5a (DotIntership DONE)
-=======
-    <div class="container mt-5">
->>>>>>> 6467420 (Fix - Tambahan fitur list view untuk Kategori)
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="d-flex justify-content-between mb-5">
@@ -17,21 +9,18 @@
                         @if (Auth::user()->role == 'admin')
                             <a class="btn btn-success" href="{{ url('/createBook') }}" role="button">Tambah Data Buku dan
                                 Kategori</a>
-<<<<<<< HEAD
-=======
-                        @elseif(Auth::user()->role == 'user')
+                        @elseif (Auth::user()->role == 'user')
                             <a class="btn btn-primary" href="{{ url('/createBook') }}" role="button">Tambah Data Buku</a>
->>>>>>> 20f0b5a (DotIntership DONE)
                         @endif
                     </div>
                     <div>
                         <form class="d-flex" role="search">
                             <input id="search" class="form-control me-2" type="search" placeholder="Cari Buku..."
-                                aria-label="Search">
-                            {{-- <button class="btn btn-outline-primary" type="submit">Search</button> --}}
+                                aria-label="search">
                         </form>
                     </div>
                 </div>
+
                 <div class="mb-5">
                     @if (session('success'))
                         <div class="alert alert-success" id="success-alert">
@@ -65,7 +54,6 @@
                                         <td>
                                             <a href="{{ url('/editBook/' . $book->id) }}"
                                                 class="btn btn-warning me-2">Edit</a>
-
                                             <a href="#" class="btn btn-danger me-2" data-bs-toggle="modal"
                                                 data-bs-target="#deleteModal{{ $book->id }}">Hapus</a>
 
@@ -76,8 +64,8 @@
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <h5 class="modal-title"
-                                                                id="deleteModalLabel{{ $book->id }}">
-                                                                Konfirmasi Penghapusan</h5>
+                                                                id="deleteModalLabel{{ $book->id }}">Konfirmasi
+                                                                Penghapusan</h5>
                                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                                 aria-label="Close"></button>
                                                         </div>
@@ -114,21 +102,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#search').on('keyup', function() {
-                var query = $(this).val();
-
-                $.ajax({
-                    url: "{{ route('searchBooks') }}",
-                    type: "GET",
-                    data: {
-                        'query': query
-                    },
-                    success: function(data) {
-                        $('#book-table-body').html(data);
-                    },
-                    error: function(xhr, status, error) {
-                        console.log(error); // Cek error di sini jika data tidak terpanggil
-                    }
+            $(document).ready(function() {
+                $('#search').on('keyup', function() {
+                    var query = $(this).val();
+                    $.ajax({
+                        url: "{{ route('searchBooks') }}",
+                        type: "GET",
+                        data: {
+                            'query': query
+                        },
+                        success: function(data) {
+                            $('#book-table-body').html(data);
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(
+                                error); // Cek error di sini jika data tidak terpanggil
+                        }
+                    });
                 });
             });
         });

@@ -129,25 +129,21 @@ class BookController extends Controller
     public function searchBooks(Request $request)
     {
         $query = $request->input('query');
-        // Pencarian berdasarkan judul buku
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 517d39e (Perbaikan di Book Controller)
-        $books = Book::where('title', 'LIKE', '%' . $query . '%')
-            ->orWhere('author', 'LIKE', '%' . $query . '%')
-            ->orWhere('published_at', 'LIKE', '%' . $query . '%')
-            ->orWhereHas('category', function ($q) use ($query) {
-                $q->where('name', 'LIKE', '%' . $query . '%');
-            })
-            ->with('category') // Eager load category to prevent multiple queries
-            ->get();
-<<<<<<< HEAD
-=======
-        $books = Book::where('title', 'LIKE', '%' . $query . '%')->get();
->>>>>>> 20f0b5a (DotIntership DONE)
-=======
->>>>>>> 517d39e (Perbaikan di Book Controller)
+
+        // Ambil semua buku jika query kosong
+        if (empty($query)) {
+            $books = Book::with('category')->get();
+        } else {
+            // Pencarian berdasarkan judul, pengarang, dan kategori
+            $books = Book::where('title', 'LIKE', '%' . $query . '%')
+                ->orWhere('author', 'LIKE', '%' . $query . '%')
+                ->orWhere('published_at', 'LIKE', '%' . $query . '%')
+                ->orWhereHas('category', function ($q) use ($query) {
+                    $q->where('name', 'LIKE', '%' . $query . '%');
+                })
+                ->with('category') // Eager load category to prevent multiple queries
+                ->get();
+        }
 
         // Ambil role pengguna
         $userRole = Auth::user()->role;
@@ -161,14 +157,14 @@ class BookController extends Controller
             $html .= '<td>' . $book->category->name . '</td>';
             $html .= '<td>' . $book->published_at . '</td>';
 
-            // Hanya tampilkan tombol jika pengguna memiliki role yang sesuai
-            if ($userRole === 'admin') { // Ganti dengan role yang sesuai
-                $html .= '<td>
-                        <a href="/editBook/' . $book->id . '" class="btn btn-warning">Edit</a>
-                        <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal' . $book->id . '">Hapus</a>
-                    </td>';
+            // Menampilkan kolom aksi hanya untuk admin
+            if ($userRole === 'admin') {
+                $html .= '<td class="action-column">
+                    <a href="/editBook/' . $book->id . '" class="btn btn-warning">Edit</a>
+                    <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal' . $book->id . '">Hapus</a>
+                </td>';
             } else {
-                $html .= '<td></td>'; // Atau bisa kosong jika tidak ada aksi
+                $html .= '<td class="action-column"></td>'; // Untuk pengguna non-admin
             }
 
             $html .= '</tr>';
